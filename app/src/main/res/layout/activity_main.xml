@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/main_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,7 +39,7 @@
                 android:layout_gravity="center"
                 android:stateListAnimator="@null"
                 android:text="top 16 dp"
-                app:position="top"/>
+                app:position="top" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,7 +54,7 @@
                     android:layout_gravity="center"
                     android:stateListAnimator="@null"
                     android:text="top 16 dp"
-                    app:position="start"/>
+                    app:position="start" />
 
                 <com.thekhaeng.recyclerviewmargindecoration.MarginStateButton
                     android:id="@+id/btn_end"
@@ -65,7 +63,7 @@
                     android:layout_gravity="center"
                     android:stateListAnimator="@null"
                     android:text="top 16 dp"
-                    app:position="end"/>
+                    app:position="end" />
 
             </LinearLayout>
 
@@ -76,7 +74,7 @@
                 android:layout_gravity="center"
                 android:stateListAnimator="@null"
                 android:text="top 16 dp"
-                app:position="bottom"/>
+                app:position="bottom" />
         </LinearLayout>
 
 
@@ -86,9 +84,8 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/button_margin"
             android:layout_weight="1"
-            android:text="16 dp"/>
+            android:text="16 dp" />
 
     </LinearLayout>
 
 </LinearLayout>
-

@@ -8,6 +8,7 @@
 A library for add margin each item in RecyclerView.
 
 ## 「 New UPDATE 」
+- _version 2.0.0_ - Migrate to AndroidX 
 - _version 1.2.1_ - support RTL language
 
 ## 「 DEMO APPLICATION 」
@@ -21,53 +22,51 @@ A library for add margin each item in RecyclerView.
 Maven
 ```xml
 <dependency>
-  <groupId>com.github.thekhaeng</groupId>
+  <groupId>com.github.PhompAng</groupId>
   <artifactId>recycler-margin</artifactId>
-  <version>1.2.1</version>
+  <version>2.0.0</version>
   <type>pom</type>
 </dependency>
 ```
 
 Gradle
 ```gradle
-compile ('com.github.thekhaeng:recycler-margin:1.2.1') {
-    exclude group: 'com.android.support', module: 'recyclerview-v7'
-}
+implementation ('com.github.PhompAng:recycler-margin:2.0.0')
 ```
 
 ## 「 Usage 」
 
 ### For LinearLayoutManager
 ```java
-recyclerView.addItemDecoration( new LayoutMarginDecoration( 1, spaceInPx ) );
+recyclerView.addItemDecoration(new LayoutMarginDecoration(1, spaceInPx));
 ```
 
 ### For GridLayoutManager
 ```java
-recyclerView.addItemDecoration( new LayoutMarginDecoration( yourColumn, spaceInPx ) );
+recyclerView.addItemDecoration(new LayoutMarginDecoration(yourColumn, spaceInPx));
 ```
 
 ### For StaggeredGridLayoutManager
 ```java
-recyclerView.addItemDecoration( new LayoutMarginDecoration( yourColumn, spaceInPx ) );
+recyclerView.addItemDecoration(new LayoutMarginDecoration(yourColumn, spaceInPx));
 ```
 
 ### Set padding
 
 ```java
-LayoutMarginDecoration layoutMargin = new LayoutMarginDecoration( gridSpan, itemSpace );
+LayoutMarginDecoration layoutMargin = new LayoutMarginDecoration(gridSpan, itemSpace);
 
-layoutMargin.setPadding(recyclerView, top, bottom, left, right );
+layoutMargin.setPadding(recyclerView, top, bottom, left, right);
 
 or
 
-layoutMargin.setPadding(recyclerView, padding );
+layoutMargin.setPadding(recyclerView, padding);
 ```
 
 or use **xml**
 
 ```xml
-<android.support.v7.widget.RecyclerView
+<androidx.recyclerview.widget.RecyclerView
     ...
     android:padding="16dp"
     android:clipToPadding="false"
@@ -79,12 +78,12 @@ or use **xml**
 
 ### Click listener
 ```java
-LayoutMarginDecoration layoutMargin = new LayoutMarginDecoration( spaceInPx );
+LayoutMarginDecoration layoutMargin = new LayoutMarginDecoration(spaceInPx);
 
-layoutMargin.setOnClickLayoutMarginDecorationItemListener( new OnClickLayoutMarginDecorationItemListener(){
+layoutMargin.setOnClickLayoutMarginDecorationItemListener(new OnClickLayoutMarginDecorationItemListener() {
      @Override
-     public void onClick( Context context, View v, int position, int spanIndex, RecyclerView.State state ){
-         Toast.makeText( context, "item: " + position + "\ncolumn: " + spanIndex, Toast.LENGTH_SHORT ).show();
+     public void onClick(Context context, View v, int position, int spanIndex, RecyclerView.State state) {
+         Toast.makeText(context, "item: " + position + "\ncolumn: " + spanIndex, Toast.LENGTH_SHORT).show();
      }
 );
 ```
@@ -111,5 +110,3 @@ Follow [facebook.com/thekhaeng.io](https://www.facebook.com/thekhaeng.io) on Fac
 or [@nonthawit](https://medium.com/@nonthawit) at my Medium blog. :)
 
 For contact, shoot me an email at nonthawit.thekhaeng@gmail.com
-
-
